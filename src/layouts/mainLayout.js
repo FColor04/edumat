@@ -1,7 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import Header from "../components/header/header";
-import Navbar from "../components/navBar/navbar";
+import Navbar from "../components/navbar/navbar";
 
 import MetropolisMedium from "../../static/Metropolis-Medium.otf";
 import MetropolisRegular from "../../static/Metropolis-Regular.otf";
