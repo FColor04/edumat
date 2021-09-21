@@ -6,6 +6,7 @@ import HomeIcon from "../../images/Icons/Home icon.svg";
 import MoreIcon from "../../images/Icons/More icon.svg";
 import PlusIcon from "../../images/Icons/Plus Icon.svg";
 import TestIcon from "../../images/Icons/Test icon.svg";
+import Toolbar from "../toolbar/toolbar";
 
 const StyledNavbar = styled.nav`
   position: fixed;
@@ -16,6 +17,8 @@ const StyledNavbar = styled.nav`
   align-items: center;
   justify-content: space-evenly;
   border-top: 2px solid #c1c1c1;
+  z-index: 198;
+  background-color: white;
 `;
 
 const IconStructure = (props) => (
@@ -27,17 +30,22 @@ const IconStructure = (props) => (
 const Icon = styled(IconStructure)`
   width: 32px;
   height: 32px;
-  opacity: ${({ active }) => (active ? 1 : 0.5)};
+  opacity: 0.5;
+  &.active {
+    opacity: 1;
+  }
 `;
 
 const Navbar = () => {
   return (
     <StyledNavbar>
-      <Icon src={HomeIcon} alt="Home" active></Icon>
-      <Icon src={CourseIcon} alt="Courses"></Icon>
-      <Icon src={PlusIcon} alt="Plus"></Icon>
-      <Icon src={TestIcon} alt="Tests"></Icon>
-      <Icon src={MoreIcon} alt="More"></Icon>
+      <Toolbar>
+        <Icon src={HomeIcon} alt="Home"></Icon>
+        <Icon src={CourseIcon} alt="Courses"></Icon>
+        <Icon src={PlusIcon} alt="Plus"></Icon>
+        <Icon src={TestIcon} alt="Tests"></Icon>
+        <Icon src={MoreIcon} alt="More"></Icon>
+      </Toolbar>
     </StyledNavbar>
   );
 };

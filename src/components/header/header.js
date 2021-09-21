@@ -3,6 +3,10 @@ import styled from "styled-components";
 import Logo from "../../images/logo.svg";
 import { Link } from "gatsby";
 
+import Heart from "../../images/Icons/Heart.svg";
+import Notifications from "../../images/Icons/Notifications.svg";
+import Search from "../../images/Icons/Search.svg";
+
 const StyledHeader = styled.header`
   position: sticky;
   height: 92px;
@@ -10,10 +14,12 @@ const StyledHeader = styled.header`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 2rem;
+  background-color: white;
+  z-index: 199;
 `;
 
 const StyledLink = styled(Link)`
-  background-color: silver;
+  background-color: #f4f4f4;
   color: grey;
   &.active {
     color: black;
@@ -51,14 +57,20 @@ const Header = () => {
     <StyledHeader>
       <StyledLogo src={Logo} alt="edumat" />
       <StyledButtonList>
-        <StyledButton>a</StyledButton>
-        <StyledButton>b</StyledButton>
-        <StyledButton>c</StyledButton>
+        <StyledButton>
+          <img src={Search} alt="search" />
+        </StyledButton>
+        <StyledButton>
+          <img src={Heart} alt="Heart" />
+        </StyledButton>
+        <StyledButton>
+          <img src={Notifications} alt="Notifications" />
+        </StyledButton>
       </StyledButtonList>
       <StyledLink activeClassName="active" to="/">
         Summary
       </StyledLink>
-      <StyledLink activeClassName="active" to="/activity">
+      <StyledLink activeClassName="active" to="/#">
         Activity
       </StyledLink>
     </StyledHeader>
